@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
-// Classe représentant la structure JSON attendue
 public class ProcessKillList
 {
     public List<string> ExactProcesses { get; set; }
@@ -30,7 +28,7 @@ class Program
 
         ProcessKillList processKillList = await GetProcessKillListAsync();
 
-        // Boucle pour tuer les processus par nom exact
+        // Kill les process par nom (exact)
         foreach (var processName in processKillList.ExactProcesses)
         {
             foreach (Process process in Process.GetProcessesByName(processName))
@@ -41,7 +39,7 @@ class Program
             }
         }
 
-        // Boucle pour tuer les processus contenant un mot-clé spécifique
+        // Tuer les process qui contiennent un "mot clé"
         Process[] allProcesses = Process.GetProcesses();
         foreach (var process in allProcesses)
         {
@@ -74,7 +72,7 @@ class Program
         string url = "https://liamgenjs.vercel.app/api/game-turbo/list.json";
         ProcessKillList processKillList = new ProcessKillList();
 
-        // Liste locale de secours en cas d'échec de la requête
+        // Liste locale en cas d'échec de la requête
         ProcessKillList localProcessKillList = new ProcessKillList
         {
             ExactProcesses = new List<string>
@@ -102,7 +100,6 @@ class Program
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
 
-                // Désérialisation du JSON pour obtenir la liste des processus
                 processKillList = JsonConvert.DeserializeObject<ProcessKillList>(responseBody);
                 Console.WriteLine($"Data from remote server loaded !");
             }
