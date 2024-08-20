@@ -10,8 +10,9 @@
 
 Kill all useless apps while playing
 
+## Requirements
 
-
+- Need **administrator rights** to kill process
 
 ## Authors
 
@@ -22,9 +23,7 @@ Kill all useless apps while playing
 
 Contributions are always welcome!
 
-Fork this projetc and do a pull request !
-
-Please adhere to this project's `code of conduct`.
+Fork this project and do a pull request !
 
 
 ## Features
@@ -33,7 +32,6 @@ Please adhere to this project's `code of conduct`.
 - Fetch on remote server
 - Kill by keywords
 - Kill by name
-- Need administrator rights to kill
 
 ## Support
 
