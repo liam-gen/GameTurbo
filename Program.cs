@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 public class ProcessKillList
 {
