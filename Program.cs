@@ -66,7 +66,7 @@ class Program
 
     static async Task<ProcessKillList> GetProcessKillListAsync()
     {
-        string url = "https://liamgenjs.vercel.app/api/game-turbo/list.json";
+        string url = "https://liamcharpentier.fr/api/game-turbo/list.json";
         ProcessKillList processKillList = new ProcessKillList();
 
         // Liste locale en cas d'échec de la requête
